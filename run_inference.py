@@ -4,10 +4,17 @@
 
 import numpy as np
 import tensorflow as tf
+<<<<<<< HEAD
+import getLabel
+#imagePath = '/home/lgc/Desktop/croptest/IMG_4042.jpg'                                      # 추론을 진행할 이미지 경로
+modelFullPath = '/home/lgc/Desktop/LuxGoodsChecker/model/output_graph.pb'                                      # 읽어들일 graph 파일 경로
+labelsFullPath = '/home/lgc/Desktop/LuxGoodsChecker/model/output_labels.txt'                                   # 읽어들일 labels 파일 경로
+=======
 
 imagePath = '/home/lgc/Desktop/LuxGoodsChecker/dataset/IMG_4043/d7.png'                                      # 추론을 진행할 이미지 경로
 modelFullPath = '/tmp/output_graph.pb'                                      # 읽어들일 graph 파일 경로
 labelsFullPath = '/tmp/output_labels.txt'                                   # 읽어들일 labels 파일 경로
+>>>>>>> 9e17537367af764d8bf46d314b7f463bfa390ae0
 imagePathB = '/home/lgc/test/test.png'
 
 def create_graph():
@@ -19,9 +26,15 @@ def create_graph():
         _ = tf.import_graph_def(graph_def, name='')
 
 
+<<<<<<< HEAD
+def run_inference_on_image(imagePath):
+    answer = None
+    getLabel.main(imagePath)
+=======
 def run_inference_on_image():
     answer = None
 
+>>>>>>> 9e17537367af764d8bf46d314b7f463bfa390ae0
     if not tf.gfile.Exists(imagePath):
         tf.logging.fatal('File does not exist %s', imagePath)
         return answer
